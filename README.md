@@ -51,3 +51,15 @@ Build a secure, production-ready Azure environment to host a university e-learni
 2. Confirmed no public exposure of data services.
 3. Validated logging and alert functionality.
 4. Reviewed RBAC and security posture.
+--------------------------------------------------------------------------------------
+PROJECT METADATA
+| Item             | Value                        |
+| ---------------- | ---------------------------- |
+| Subscription     | Your Production Subscription |
+| Region           | Canada Central               |
+| Secondary Region | Canada East                  |
+| Address Space    | 10.10.0.0/16                 |
+| App Name Prefix  | eduportal                    |
+| Environment      | prod                         |
+| Naming Pattern   | `<type>-eduportal-prod`      |
+
