@@ -46,7 +46,7 @@ Build a secure, production-ready Azure environment to host a university e-learni
 2. Enabled diagnostic logs for all services.
 3. Configured alert rules for availability and performance.
 
-***Phase 8 – Production Validation****
+***Phase 8 – Production Validation***
 1. Verified private connectivity across services.
 2. Confirmed no public exposure of data services.
 3. Validated logging and alert functionality.
