@@ -3,7 +3,10 @@
 
 Secure, private, production-grade Azure architecture for an e-learning platform, implementing network segmentation, Private Endpoints, Managed Identity, RBAC, and centralized monitoring.
 
+Architecture Pattern: Public frontend with fully private backend services using Private Link and RBAC-controlled access.
+
 **Architecture Overview**
+
 The environment follows a secure layered architecture:
 
 - Public-facing App Service.
@@ -61,7 +64,7 @@ The environment follows a secure layered architecture:
 
 ***Phase 7 – Monitoring & Alerts***
 1. Deployed Log Analytics workspace.
-2. Enabled diagnostic logs for all services.
+2. Enabled resource-level diagnostic settings streaming to centralized Log Analytics workspace.
 3. Configured alert rules for availability and performance.
 
 ***Phase 8 – Production Validation***
