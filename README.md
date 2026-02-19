@@ -1,7 +1,25 @@
-# EduPortal-University
+# EduPortal University – Secure Azure Production Architecture
 📌 Project Goal
 
-Build a secure, production-ready Azure environment to host a university e-learning platform.
+Secure, private, production-grade Azure architecture for an e-learning platform, implementing network segmentation, Private Endpoints, Managed Identity, RBAC, and centralized monitoring.
+
+**Architecture Overview**
+The environment follows a secure layered architecture:
+
+- Public-facing App Service.
+- Private backend services (SQL, Storage, Key Vault).
+- Network segmentation via VNet and subnets.
+- Private Endpoints for data services.
+- Centralized monitoring via Log Analytics.
+- RBAC and Managed Identity for secure access.
+
+**Security by Design Principles**
+
+- No public access to data services.
+- Least privilege RBAC model.
+- Managed Identity instead of stored credentials.
+- Private DNS for internal resolution.
+- Centralized logging and alerting.
 
 ***Phase 0 – Resource Organization***
 1. Created dedicated Resource Groups for Network, App, Data, Security, and Operations.
@@ -14,7 +32,7 @@ Build a secure, production-ready Azure environment to host a university e-learni
 3. Enforced group-based access (no direct user permissions).
 4. Enabled MFA for privileged roles.
 
-***Phase 2 – Networking Foundation***
+***Phase 2 – Network Segmentation & Private Connectivity***
 1. Deployed Virtual Network with segmented subnets.
 2. Configured Private DNS zones.
 3. Established network boundary for private services.
@@ -24,7 +42,7 @@ Build a secure, production-ready Azure environment to host a university e-learni
 2. Enabled Managed Identity.
 3. Integrated Web App with Virtual Network.
 
-***Phase 4 – Secure Database Deployment***
+***Phase 4 – Private SQL Deployment (No Public Exposure)***
 1. Deployed Azure SQL Database.
 2. Disabled public network access.
 3. Configured Private Endpoint for secure connectivity.
@@ -51,15 +69,23 @@ Build a secure, production-ready Azure environment to host a university e-learni
 2. Confirmed no public exposure of data services.
 3. Validated logging and alert functionality.
 4. Reviewed RBAC and security posture.
---------------------------------------------------------------------------------------
-PROJECT METADATA
-| Item             | Value                        |
-| ---------------- | ---------------------------- |
-| Subscription     | Your Production Subscription |
-| Region           | Canada Central               |
-| Secondary Region | Canada East                  |
-| Address Space    | 10.10.0.0/16                 |
-| App Name Prefix  | eduportal                    |
-| Environment      | prod                         |
-| Naming Pattern   | `<type>-eduportal-prod`      |
 
+**Operational Impact**:
+
+This deployment achieves:
+
+- Zero public exposure of backend services.
+- Identity-based service-to-service authentication.
+- Centralized monitoring and alerting.
+- Production-ready governance structure.
+--------------------------------------------------------------------------------------
+🏗️ Deployment Specifications
+| Component          | Configuration                        |
+| ------------------ | ------------------------------------ |
+| Region             | Canada Central                       |
+| Environment        | Production                           |
+| Architecture Model | Hub-Spoke (Single VNet segmented)    |
+| Network Model      | Private Endpoints + Private DNS      |
+| Identity Model     | Entra ID + Managed Identity          |
+| Monitoring         | Log Analytics + Azure Monitor Alerts |
+| Access Control     | RBAC (Group-Based)                   |
